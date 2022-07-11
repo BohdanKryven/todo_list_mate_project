@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 >Tags
+        <a class="btn btn-primary float-right" href="" >Add</a>
+    </h1>
+
+    <br>
+    <table class="table">
+        <tr>
+        <th>Name</th>
+        <th>Update</th>
+        <th>Delete</th>
+        {% for tag in tag_list %}
+            <p>
+              <tr>
+                <h3><td>{{ tag.name }}</td></h3>
+                <td><a href=""
+                   class="manage-task-tags">Update</a></td>
+                <td><a href=""
+                   class="manage-task-tags">Delete</a></td>
+              </tr>
+
+        {% endfor %}
+    </table>
+
+{% endblock %}
