@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1 >Tags
-        <a class="btn btn-primary float-right" href="" >Add</a>
+        <a class="btn btn-primary float-right" href="{% url 'todo:tag_create' %}" >Add</a>
     </h1>
 
     <br>
@@ -15,9 +15,9 @@
             <p>
               <tr>
                 <h3><td>{{ tag.name }}</td></h3>
-                <td><a href=""
+                <td><a href="{% url 'todo:tag_update' pk=tag.id %}"
                    class="manage-task-tags">Update</a></td>
-                <td><a href=""
+                <td><a href="{% url 'todo:tag_delete' pk=tag.id %}"
                    class="manage-task-tags">Delete</a></td>
               </tr>
 

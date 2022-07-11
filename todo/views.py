@@ -12,44 +12,43 @@ class TaskListView(generic.ListView):
     ordering = ["status", "-time_created"]
 
 
-# class TaskCreateView(generic.CreateView):
-#     model = Task
-#     fields = "__all__"
-#     success_url = reverse("todo:index")
-#
-#
-# class TaskUpdateView(generic.UpdateView):
-#     model = Task
-#     fields = "__all__"
-#     success_url = reverse("todo:index")
+class TaskCreateView(generic.CreateView):
+    model = Task
+    fields = "__all__"
+    success_url = reverse_lazy("todo:index")
 
 
-# class TaskDeleteView(generic.DeleteView):
-#     model = Task
-#     success_url = reverse("taxi:task-list")
-#     template_name = "todo/index.html"
+class TaskUpdateView(generic.UpdateView):
+    model = Task
+    fields = "__all__"
+    success_url = reverse_lazy("todo:index")
 
 
-# class TagListView(generic.ListView):
-#     model = Tag
+class TaskDeleteView(generic.DeleteView):
+    model = Task
+    success_url = reverse_lazy("todo:index")
 
 
-# class TagCreateView(generic.CreateView):
-#     model = Tag
-#     fields = "__all__"
-#     success_url = reverse("todo:tag_list")
-#
-#
-# class TegUpdateView(generic.UpdateView):
-#     model = Tag
-#     fields = "__all__"
-#     success_url = reverse("todo:tag_list")
+class TagListView(generic.ListView):
+    model = Tag
 
 
-# class TegDeleteView(generic.DeleteView):
-#     model = Tag
-#     success_url = reverse("taxi:task-list")
-#     template_name = "todo/tag_confirm_delete.html"
+class TagCreateView(generic.CreateView):
+    model = Tag
+    fields = "__all__"
+    success_url = reverse_lazy("todo:tag_list")
+
+
+class TagUpdateView(generic.UpdateView):
+    model = Tag
+    fields = "__all__"
+    success_url = reverse_lazy("todo:tag_list")
+
+
+class TagDeleteView(generic.DeleteView):
+    model = Tag
+    template_name = "todo/tag_confirm_delete.html"
+    success_url = reverse_lazy("todo:tag_list")
 
 
 def task_change_status(request, pk, action):
