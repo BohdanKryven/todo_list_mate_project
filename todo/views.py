@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse_lazy
 from django.views import generic
 
 from todo.models import Task, Tag
